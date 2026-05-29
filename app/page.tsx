@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const featuredCategories = [
   "Local makers",
   "Digital goods",
@@ -30,12 +32,20 @@ export default function Home() {
               <p className="text-xs text-white/55">Marketplace</p>
             </div>
           </div>
-          <a
-            href="#vendors"
-            className="rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-white/85 transition hover:border-emerald-200/60 hover:text-emerald-100"
-          >
-            Join waitlist
-          </a>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/chat"
+              className="hidden rounded-full border border-emerald-200/30 bg-emerald-200/10 px-5 py-2 text-sm font-medium text-emerald-100 transition hover:border-emerald-200/70 hover:bg-emerald-200/15 sm:inline-flex"
+            >
+              AI chat
+            </Link>
+            <a
+              href="#vendors"
+              className="rounded-full border border-white/15 px-5 py-2 text-sm font-medium text-white/85 transition hover:border-emerald-200/60 hover:text-emerald-100"
+            >
+              Join waitlist
+            </a>
+          </div>
         </nav>
 
         <div className="mx-auto grid max-w-7xl gap-12 pb-20 pt-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:pb-28 lg:pt-28">
@@ -52,9 +62,15 @@ export default function Home() {
               trust, discovery, and fast checkout.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/chat"
+                className="rounded-full bg-emerald-300 px-7 py-4 text-center text-base font-bold text-slate-950 shadow-[0_18px_60px_rgba(110,231,183,0.26)] transition hover:bg-emerald-200"
+              >
+                Open AI chat
+              </Link>
               <a
                 href="#vendors"
-                className="rounded-full bg-emerald-300 px-7 py-4 text-center text-base font-bold text-slate-950 shadow-[0_18px_60px_rgba(110,231,183,0.26)] transition hover:bg-emerald-200"
+                className="rounded-full border border-white/15 px-7 py-4 text-center text-base font-semibold text-white transition hover:border-white/35 hover:bg-white/5"
               >
                 Start selling
               </a>
