@@ -583,7 +583,7 @@ const Example = () => {
   );
 
   return (
-    <div className="relative flex size-full flex-col divide-y overflow-hidden">
+    <div className="relative flex min-h-screen w-full flex-col divide-y overflow-hidden bg-background text-foreground">
       <Conversation>
         <ConversationContent>
           {messages.map(({ versions, ...message }) => (
