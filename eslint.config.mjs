@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // AI Elements/shadcn generated component source is vendor code.
+    "components/**",
   ]),
 ]);
 
