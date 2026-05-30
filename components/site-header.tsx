@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   CreditCardIcon,
   LogOutIcon,
+  MenuIcon,
   SettingsIcon,
   SparklesIcon,
   StoreIcon,
@@ -51,7 +52,36 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                aria-label="Open navigation menu"
+              >
+                <MenuIcon className="size-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="w-48">
+              {navLinks.map((link) => {
+                const active = isActive(pathname, link.href);
+                return (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(active && "font-medium text-foreground")}
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Link
             href="/"
             className="group flex items-center gap-3 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-ring"
