@@ -95,7 +95,7 @@ export default function Home() {
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] opacity-70">
                     Gross volume
                   </p>
-                  <p className="mt-2 text-4xl font-black">$84.2k</p>
+                  <p className="mt-2 text-4xl font-black">$100k</p>
                   <p className="mt-2 text-sm font-medium opacity-75">
                     Projected for launch cohort one
                   </p>
